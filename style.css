@@ -1,0 +1,518 @@
+/*
+Theme Name:     Alice James Books
+Theme URI:      http: //alicejamesbooks.com/
+Description:    Theme for Alice James Books
+Author:         <a href="http://www.tekpals.com">Ed Ehrgott</a>
+Author URI:     http://www.tekpals.com
+Template:       briefed
+Version:        0.1.0
+*/
+
+@import url("../briefed/style.css");
+
+#header {
+	padding: 33px 0 0;
+}
+
+#navigation {
+	margin-bottom: 0;
+	border-bottom: 2px solid #9a005a;
+	background-color: #fff;
+}
+
+.nav a:hover, .nav li.current_page_item a, .nav li.current_page_parent a, .nav li.current-menu-ancestor a, .nav li.current-cat a {
+	background: #9a005a;
+	color: #ededed !important;
+}
+
+.nav a {
+	text-shadow: none;
+	padding: 5px 5px 5px 5px;
+	border-bottom: none;
+}
+
+#icons {
+	padding-right: 15px;
+}
+
+#about {
+	background: #fff;
+	padding: 10px 0 10px;
+	margin-bottom: 0;
+}
+
+#about .bio p {
+	padding: 0 20px 0 20px;
+}
+
+#about .bio p {
+	text-shadow: none;
+}
+
+#about a.social-link {
+	padding-right: 10px;
+}
+
+#about .ico-twitter {
+	background: url(/ajbassets/ico-twitter.png) no-repeat top left;
+}
+
+#about .ico-facebook {
+	background: url(/ajbassets/ico-facebook.png) no-repeat top left;
+}
+
+#about .ico-rss {
+	background: url(/ajbassets/ico-rss.png) no-repeat top left;
+}
+
+#about .ico-email {
+	background: url(/ajbassets/ico-email.png) no-repeat top left;
+}
+
+#slides {
+	position: relative;
+}
+
+.slider-pag {
+	top: -52px;
+	right: 390px;
+	position: absolute;
+}
+
+#portfolio {
+	background-color: #ffffff;
+	position: relative;
+}
+
+.portfolio-title {
+	font-size: 30px;
+	color: #ed008b;
+	text-transform: none;
+	line-height: 40px;
+	text-shadow: none;
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.portfolio-shadow {
+	position: absolute;
+	bottom: -23px;
+	right: -25px;
+	z-index: -1;
+	width: 200px;
+	height: 200px;
+	background: url(images/bg-post.png) no-repeat bottom right;
+}
+
+#portfolio .dribbble-shot {
+	line-height: 5px;
+	text-align: center;
+}
+
+#community {
+	padding-top: 30px;
+	margin-top: 15px;
+	background-color: #ffffff;
+	position: relative;	
+}
+
+#community-buttons {
+	padding-right: 10px;
+}
+
+#community-title {
+	width: 470px;
+	padding-left: 10px;
+	float: left;
+}
+
+.community-shadow {
+	position: absolute;
+	bottom: -23px;
+	right: -25px;
+	z-index: -1;
+	width: 200px;
+	height: 200px;
+	background: url(images/bg-post.png) no-repeat bottom right;
+}
+
+#community h2 {
+	color: #ED008B;
+	font-size: 30px;
+	border-bottom: 2px solid #000;
+	margin: 0 0 5px 0;
+	padding: 0 0 10px 0;
+}
+
+#community p {
+	font-size: 1.6em;
+}
+
+#community a.community-button {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	display: block;
+	width: 172px;
+	height: 32px;
+	overflow: hidden;
+	color: #fff;
+	font-size: 1.4em;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 5px 5px 5px 10px;
+	margin-bottom: -5px;
+}
+
+#community a.community-button:hover {
+	background-position: bottom left;
+}
+
+#community .community-button {
+	background: url(/ajbassets/community-button.png) no-repeat top left;
+}
+
+a.community-donate {
+	display: block;
+	float: right;
+	margin-top: 15px;
+	margin-right: 30px;
+	background: url('/ajbassets/donate-button.png') no-repeat top right;
+	height: 100px;
+	width: 100px;
+	margin-left: 30px;
+}
+
+a.community-donate:hover {
+	background-position: bottom;
+}
+
+#community-donate input:hover {
+	background-position: -40px 0;
+}
+
+#community-posts .post-content {
+width: auto;
+float: none;
+}
+
+#blog-title {
+	position: relative;
+}
+
+.title-shadow {
+	position: absolute;
+	bottom: -23px;
+	right: -25px;
+	z-index: -1;
+	width: 200px;
+	height: 200px;
+	background: url(images/bg-title.png) no-repeat bottom right;
+}
+
+.tumblog-title {
+	background-color: #fff;
+	margin-top: 15px;
+	padding-left: 10px;
+}
+
+.home #blog {
+	border-top: 1px solid #363636;
+	padding-top: 10px;
+}
+
+ol.portfolio li a, ol.dribbbles li a {
+	color: #222;
+	font-size: 16px;
+	line-height: 16px;
+}
+
+.post .authors a, .page .authors a:visited {
+	text-transform: none;
+	color: #000;
+	line-height: 0;
+}
+
+.post-content {
+	margin: 0 0 15px;
+}
+
+.post-title-content {
+	margin: 0 0 15px;
+	width: 640px;
+	margin: 0 0 10px;
+	float: right;
+	background: white;
+	padding: 26px 24px;
+	position: relative;
+	min-height: 600px;
+}
+
+.post-scroll {
+	overflow: auto;
+	height: 604px;
+	width: 400px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background: white;
+	padding: 24px 24px;
+}
+
+a.add-to-cart {
+	display: block;
+	background: url('/ajbassets/add-to-cart.png') no-repeat top right;
+	height: 30px;
+	width: 150px;
+	margin-left: 30px;
+}
+a.add-to-cart:hover {
+	background-position: bottom;
+}
+
+.post-author-content {
+	margin: 0 0 15px;
+	width: 640px;
+	margin: 0 0 10px;
+	float: right;
+	background: white;
+	padding: 26px 24px;
+	position: relative;
+}
+
+#entry-container {
+	position: relative;
+}
+
+.entry {
+	background-color: #ffffff;
+	padding:  0 15px 0 15px;
+}
+
+#selected-poem h3,p {
+	margin-bottom: 1.2em;
+}
+
+.tumblog-title {
+	font-size: 30px;
+	color: #ed008b;
+	text-transform: none;
+	line-height: 40px;
+	text-shadow: none;
+	margin-bottom: 10px;
+}
+
+.slider-container {
+	padding: 10px 4px;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	border-bottom: 1px solid #9a005a;	
+}
+
+.slider-header {
+	display: block;
+	height: 30px;
+}
+
+.slider-nav {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -17px;
+	height: 0;	
+}
+.slider-nav-1 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-2 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-3 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-4 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-5 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-6 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-7 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-8 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider-nav-9 {
+	float: right;
+	cursor: pointer;
+	position: relative;
+	top: -35px;
+	height: 0;	
+}
+.slider {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-1 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-2 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-3 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-4 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-5 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-6 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-7 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-8 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-9 {
+	padding-left: 10px;
+	width: 8000px;
+	height: 200px;
+}
+.slider-item {
+	display: inline;
+	width: 140px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-1 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-2 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-3 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-4 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-5 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-6 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-7 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-8 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+.slider-item-9 {
+	display: inline;
+	width: 135px;
+	float: left;
+	padding: 4px 0 10px 0;
+}
+
+a.slider-item-title {
+	color: #4e0c1a !important;
+	font-size: 14px;
+}
+
+a.slider-item-title:hover {
+	text-decoration: none;
+	color: #25a !important;
+}
+
+#sidebar .primary {
+	padding-top: 15px !important;
+}
+
+#sidebar .widget {
+	border-bottom: 1px solid #363636;
+}
+
+#footer a:hover {
+	border-bottom: none;
+	text-decoration: none;
+}
