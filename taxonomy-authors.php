@@ -32,12 +32,14 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 			  
 						if ( !empty( $term->description ) ): ?> <div class="archive-description"> <?php echo $term->description; ?> </div> <?php endif; ?>
 					    
+					     <?php if (function_exists('nrelate_related')) nrelate_related(); ?>
+					    
 				    </div> <!-- entry -->
-			   	    <div class="post-shadow"></div>
+			   	    <!--<!--<div class="post-shadow"></div>-->
 			   </div> <!-- post content -->
 			   
 			   <?php // show slider with author's other works
-			   $wp_query = new WP_Query("post_type=ajb-titles&post_status=publish&authors=" . $term->name . '"'); ?>
+			   $wp_query = new WP_Query("post_type=ajb-titles&post_status=publish&authors=" . $term->name . '&nopaging=true"'); ?>
 			   <div class="slider-container">
 				 <div class="slider-header">
 				    <h2 class="slider-title">Titles by <?php echo $term->name; ?></h2>
@@ -57,6 +59,8 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 			   </div><!-- slider-container -->
 
 		  </div><!-- post_class -->
+		  
+	 <?php if (function_exists('nrelate_related')) nrelate_related(); ?>
 		  
 	 </div><!-- #main -->
 

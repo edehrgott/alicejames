@@ -24,7 +24,7 @@
 
 					<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'woothemes' ), 'after' => '</div>' ) ); ?>
                	</div><!-- /.entry -->
-			     <div class="post-shadow"></div>
+			     <!--<!--<div class="post-shadow"></div>-->
 	 			 </div>
 
 				<?php edit_post_link( __( '{ Edit }', 'woothemes' ), '<span class="small">', '</span>' ); ?>
@@ -39,7 +39,9 @@
 			<div <?php post_class(); ?>>
             	<p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ) ?></p>
             </div><!-- /.post -->
-        <?php endif; ?>  
+        <?php endif; ?>
+	   
+		<?php if (function_exists('nrelate_related')) nrelate_related(); ?>	   
         
 		</div><!-- /#main -->
 

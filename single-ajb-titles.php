@@ -16,6 +16,7 @@
                   <div class="post-title-content">
                   
                    <?php $values = get_post_custom( $post_ID );
+			     $press_kit = isset( $values['press_kit'] ) ? esc_attr( $values['press_kit'][0] ) : 0;
                     $p_price = isset( $values['price'] ) ? esc_attr( $values['price'][0] ) : 0;
                     $p_isbn = isset( $values['isbn'] ) ? esc_attr( $values['isbn'][0] ) : 0;
                     $p_paypal_link = isset( $values['p_paypal_link'] ) ? $values['p_paypal_link'][0] : 0;                    
@@ -35,13 +36,16 @@
                    <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( $meta_data ); ?>">
                    <?php echo woo_image( 'key=image&width='.$width.$height.'&link=img&class='.$align_class ); ?>
                    </a><?php } ?>
-                    <?php echo (($p_price) ? '<p>Paperback Price: ' . $p_price . '<br />' : '');
+                    <?php
+				echo (($p_price) ? '<p>Paperback Price: ' . $p_price . '<br />' : '');
                     echo (($p_isbn) ? 'Paperback ISBN: ' . $p_isbn . '</p>' : '');
                     echo (($p_paypal_link) ? '<a class="add-to-cart" href="' . $p_paypal_link . '" title="Add to Cart"></a><br />' : '');
                     echo (($h_price) ? '<p>Hardback Price: ' . $h_price . '<br />' : '');
                     echo (($h_isbn) ? 'Hardback ISBN: ' . $h_isbn . '</p>' : '');
-                    echo (($h_paypal_link) ? '<a class="add-to-cart" href="' . $h_paypal_link . '" title="Add to Cart"></a><br />' : ''); ?>
-                    <?php echo (($selected_poem != '') ? '<p><a id="poem" href="#selected-poem">Selected Poem</a></p>' : ''); ?><br />
+                    echo (($h_paypal_link) ? '<a class="add-to-cart" href="' . $h_paypal_link . '" title="Add to Cart"></a><br />' : '');
+                    echo (($selected_poem != '') ? '<p><a id="poem" href="#selected-poem">Selected Poem</a></p>' : '');
+				echo (($press_kit != '') ? '<p><a href="http://alicejamesbooks.org/images/pdf/' . $press_kit . '">Press Kit</a></p>' : '');
+				?>
                     <div style="display:none"><div id="selected-poem">
                          <p><?php echo $selected_poem; ?></p>
                     </div></div>
@@ -50,7 +54,7 @@
                     
                     <div class="post-scroll">
                          <?php if ( is_singular() ) { ?>
-                         <h1 class="title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+                         <h1 class="title post-scroll-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
                          <h2 class="authors"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php echo get_the_term_list( $post->ID, 'authors', '', ', ', '' ); ?></a></h2><br />
                          <?php } else { ?>
                          <h2 class="title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -71,8 +75,6 @@
                          <span class="comments"><?php comments_popup_link( __( '0 Comments', 'woothemes' ), __( '1 Comments', 'woothemes' ), __( '% Comments', 'woothemes' ) ); ?></span>
                    </div>
           
-                    <?php if (function_exists('nrelate_related')) nrelate_related(); ?>
-
                </div><!-- /.post -->
                          
                <?php if ( is_single() ) { woo_subscribe_connect(); } ?>
@@ -87,7 +89,9 @@
                <div class="post">
                     <p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ); ?></p>
                </div><!-- /.post -->
-          <?php endif; ?>  
+          <?php endif; ?>
+		
+		<?php if (function_exists('nrelate_related')) nrelate_related(); ?>
         
 		</div><!-- #main -->
 

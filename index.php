@@ -47,7 +47,7 @@
 		</ol>
 		
 		<div class="fix"></div>
-		<div class="portfolio-shadow"></div>
+		<!--<div class="portfolio-shadow"></div>-->
 	</div><!-- /#portfolio -->
 	
 		
@@ -69,19 +69,21 @@
 							<a class="community-donate" href="#"></a>
 
 						</div>
+						
+						<?php $options = get_option( 'ajb_options' ); ?>
 						<div id="community-buttons" class="fr">
-							<a class="community-button" href="internships/" title="Volunteer and Internship Opportunities">Engaged</a><br />
-							<a class="community-button" href="#" title="Our Most Recent Annual Report">Informed</a><br />
-							<a class="community-button" href="#" title="Be A Book Benefactor... No Cape Required">Heroic</a><br />
-							<a class="community-button" href="#" title="Ways to Get Involved">Diverse</a><br />
-							<a class="community-button" href="supporters-partners/" title="Our Partners and Supporters">People</a><br />
-							<div class="community-shadow"></div>										
+							<a class="community-button-1" href="<?php echo $options['button_1_link']; ?>"></a>
+							<a class="community-button-2" href="<?php echo $options['button_2_link']; ?>"></a>
+							<a class="community-button-3" href="<?php echo $options['button_3_link']; ?>"></a>
+							<a class="community-button-4" href="<?php echo $options['button_4_link']; ?>"></a>
+							<a class="community-button-5" href="<?php echo $options['button_5_link']; ?>"></a>						
+							<!--<div class="community-shadow"></div>-->										
 						</div><!-- /#icons -->
 					<div class="fix"></div>
 					</div>
 				
 					<div id="blog-title">
-					<?php if ( isset( $woo_options['woo_blog_panel_headers'] ) && $woo_options['woo_blog_panel_headers'] == 'true' ) { ?><h1 class="tumblog-title"><?php echo $woo_options['woo_blog_panel_header']; ?><span class="tumblog-tagline"><?php echo $woo_options['woo_blog_panel_description']; ?></span></h1><div class="title-shadow"></div><?php } ?>
+					<?php if ( isset( $woo_options['woo_blog_panel_headers'] ) && $woo_options['woo_blog_panel_headers'] == 'true' ) { ?><h1 class="tumblog-title"><?php echo $woo_options['woo_blog_panel_header']; ?><span class="tumblog-tagline"><?php echo $woo_options['woo_blog_panel_description']; ?></span></h1><!--<div class="title-shadow"></div>--><?php } ?>
 					</div>
 					<?php
 						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; query_posts( 'paged=' . $paged . '&post_type=post&posts_per_page=' . $woo_options['woo_blog_number_of_posts'] );
@@ -122,14 +124,15 @@
 									<?php } ?>
 							
 								    <div class="entry">
-										<?php if ( ( ( get_option( 'woo_home_content' ) == 'false' ) && ( is_home() ) ) || ( ( get_option( 'woo_archive_content' ) == 'false' ) && ( is_archive() || is_search() || is_tax() ) ) ) { the_excerpt(); } elseif ( ( $pagetype == 'archive' ) && ( get_option( 'woo_archive_content' ) == 'false' ) ) { the_excerpt(); } elseif ( ( $pagetype == 'home' ) && ( get_option( 'woo_home_content' ) == 'false' ) ) { the_excerpt(); } else { the_content(); } ?>
+										<?php the_content(); ?>
+										<?php //if ( ( ( get_option( 'woo_home_content' ) == 'false' ) && ( is_home() ) ) || ( ( get_option( 'woo_archive_content' ) == 'false' ) && ( is_archive() || is_search() || is_tax() ) ) ) { the_excerpt(); } elseif ( ( $pagetype == 'archive' ) && ( get_option( 'woo_archive_content' ) == 'false' ) ) { the_excerpt(); } elseif ( ( $pagetype == 'home' ) && ( get_option( 'woo_home_content' ) == 'false' ) ) { the_excerpt(); } else { the_content(); } ?>
 									</div>
 									<div class="post-meta">
 												<?php the_tags( '<span class="tags">', ', ', '</span>' ); ?>
 												<?php if ( $service != 'Off' ) { ?><span class="shorturl"><a href="<?php echo woo_short_url( get_permalink() ); ?>" title="<?php esc_attr_e( 'Short URL for', 'woothemes' ); ?> <?php the_title(); ?>"><?php _e( 'Short URL', 'woothemes' ) ?></a></span><?php } ?>
 									</div>
 							
-									  <div class="post-shadow"></div>
+									<!--<div class="post-shadow"></div>-->
 							
 								    </div>
 								    <div class="post-more">
@@ -155,7 +158,7 @@
 							<?php endif;
 						} ?>
 										
-	    		   <?php if ( ( isset( $woo_options['woo_blog_page_template'] ) ) && ( $woo_options['woo_blog_page_template'] > 0 ) ) { ?><a class="fr" href="<?php echo get_permalink( $woo_options['woo_blog_page_template'] ); ?>" title="<?php esc_attr_e( 'Blog Archive', 'woothemes' ); ?>"><?php _e( 'Blog Archive', 'woothemes' ); ?> &rarr;</a><div class="fix"></div><?php } ?>
+	    		   <?php if ( ( isset( $woo_options['woo_blog_page_template'] ) ) && ( $woo_options['woo_blog_page_template'] > 0 ) ) { ?><a class="fr" href="<?php echo get_permalink( $woo_options['woo_blog_page_template'] ); ?>" title="<?php esc_attr_e( 'Archive', 'woothemes' ); ?>"><?php _e( 'Archive', 'woothemes' ); ?> &rarr;</a><div class="fix"></div><?php } ?>
 	    		   
 	    		</div><!-- /#main -->
 	    		<?php get_sidebar(); ?>
