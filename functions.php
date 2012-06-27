@@ -72,7 +72,7 @@ register_taxonomy(
 			'slug' => 'authors',
 			'with_front' => false
 			),
-		'labels' => $labels_author
+		'labels' => $labels_author,
       )
 );
 
@@ -134,7 +134,8 @@ function ajb_meta_box_add() {
 }
 
 function ajb_book_meta( $post ) {
-	$values = get_post_custom( $post->ID );  
+	$values = get_post_custom( $post->ID );
+	$press_kit = isset( $values['press_kit'] ) ? esc_attr( $values['press_kit'][0] ) : '';
 	$p_price = isset( $values['price'] ) ? esc_attr( $values['price'][0] ) : '';
 	$p_isbn = isset( $values['isbn'] ) ? esc_attr( $values['isbn'][0] ) : '';
 	$p_paypal_link = isset( $values['p_paypal_link'] ) ? esc_attr( $values['p_paypal_link'][0] ) : '';	
@@ -144,7 +145,11 @@ function ajb_book_meta( $post ) {
 	
 	// We'll use this nonce field later on when saving.  
 	wp_nonce_field( 'book_meta_box_nonce', 'meta_box_nonce' ); ?>
-	
+
+	<p>  
+	<label for="press_kit_meta_box">Press Kit</label>  
+	<input type="text" name="press_kit_meta_box" id="press_kit_meta_box" value="<?php echo $press_kit; ?>" />  
+	</p>	
 	<p>  
 	<label for="price_meta_box">Paperback Price</label>  
 	<input type="text" name="price_meta_box" id="price_meta_box" value="<?php echo $p_price; ?>" />  
@@ -193,7 +198,9 @@ function ajb_meta_box_save( $post_id ) {
 	    )  
 	);  
   
-	// Make sure your data is set before trying to save it  
+	// Make sure your data is set before trying to save it
+	if( isset( $_POST['press_kit_meta_box'] ) )  
+	    update_post_meta( $post_id, 'press_kit', wp_kses( $_POST['press_kit_meta_box'], $allowed ) );  	
 	if( isset( $_POST['price_meta_box'] ) )  
 	    update_post_meta( $post_id, 'price', wp_kses( $_POST['price_meta_box'], $allowed ) );  
 	if( isset( $_POST['isbn_meta_box'] ) )  
@@ -209,5 +216,8 @@ function ajb_meta_box_save( $post_id ) {
 	    
 
 }
+
+// AJB options for community is...
+require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
 ?>
