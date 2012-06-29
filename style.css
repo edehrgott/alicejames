@@ -28,6 +28,10 @@ Version:        0.1.0
 	color: #ededed;
 }
 
+.nav {
+	padding-top: 8px;
+}
+
 .nav li ul li a:hover {
 	text-decoration: none;
 }
@@ -40,6 +44,10 @@ Version:        0.1.0
 
 .nav li ul {
 	width: 185px;
+}
+
+form.gsc-search-box {
+	width: 245px !important;
 }
 
 #icons {
