@@ -55,7 +55,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 			  
 				    <div class="entry">
 					<?php $terms = get_terms('authors', array(
-						'orderby'    => 'name',
+						'orderby'    => 'slug',
 						'order' => 'ASC',
 						'hide_empty' => 0
 					 ));
