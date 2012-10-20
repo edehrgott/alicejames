@@ -43,8 +43,8 @@
                     echo (($h_price) ? '<p>Hardback Price: ' . $h_price . '<br />' : '');
                     echo (($h_isbn) ? 'Hardback ISBN: ' . $h_isbn . '</p>' : '');
                     echo (($h_paypal_link) ? '<a class="add-to-cart" href="' . $h_paypal_link . '" title="Add to Cart"></a><br />' : '');
-                    echo (($selected_poem != '') ? '<p><a id="poem" href="#selected-poem">Selected Poem</a></p>' : '');
-				echo (($press_kit != '') ? '<p><a href="http://alicejamesbooks.org/images/pdf/' . $press_kit . '">Press Kit</a></p>' : '');
+                    echo (($selected_poem != '') ? '<p><a id="poem" href="#selected-poem">Selected Poem</a><br />' : '');
+				echo (($press_kit != '') ? '<a href="http://alicejamesbooks.org/images/pdf/' . $press_kit . '">Press Kit</a></p>' : '');
 				?>
                     <div style="display:none"><div id="selected-poem">
                          <p><?php echo $selected_poem; ?></p>
@@ -72,13 +72,14 @@
                    </div>
                    <div class="post-more">
                          <span class="like"><?php if( function_exists( 'getILikeThis' ) ) getILikeThis( 'get' ); ?></span>
+				     <?php if (function_exists('nrelate_related')) nrelate_related(); ?>			
                          <span class="comments"><?php comments_popup_link( __( '0 Comments', 'woothemes' ), __( '1 Comments', 'woothemes' ), __( '% Comments', 'woothemes' ) ); ?></span>
                    </div>
           
                </div><!-- /.post -->
                          
                <?php if ( is_single() ) { woo_subscribe_connect(); } ?>
-          
+			          
                <?php $comm = get_option( 'woo_comments' ); if ( ( $comm == "post" || $comm == "both" ) ) : ?>
                     <?php comments_template( '', true ); ?>
               <?php endif; ?>
@@ -90,9 +91,7 @@
                     <p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ); ?></p>
                </div><!-- /.post -->
           <?php endif; ?>
-		
-		<?php if (function_exists('nrelate_related')) nrelate_related(); ?>
-        
+		        
 		</div><!-- #main -->
 
         <?php get_sidebar(); ?>

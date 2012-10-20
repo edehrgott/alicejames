@@ -28,6 +28,8 @@ $i = 1;
 		  
 		  <div class="entry">
 		  
+		  <a style="line-height: 4em;" href="our-complete-catalog/">Click here to view the full catalog</a>
+		  		  
 		  <?php if ($count > 0) {			   
 			   foreach($attributes as $term){ // show store slider for each attribute						
 				    $wp_query = new WP_Query("post_type=ajb-titles&post_status=publish&attributes=" . $term->name . '&nopaging=true"'); ?>

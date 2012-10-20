@@ -30,7 +30,9 @@
 				<?php edit_post_link( __( '{ Edit }', 'woothemes' ), '<span class="small">', '</span>' ); ?>
                 
             </div><!-- /.post -->
-            
+        
+	   	  <?php if (function_exists('nrelate_related')) nrelate_related(); ?>	   
+	       
             <?php $comm = $woo_options[ 'woo_comments' ]; if ( ($comm == "page" || $comm == "both") ) : ?>
                 <?php comments_template(); ?>
             <?php endif; ?>
@@ -40,9 +42,7 @@
             	<p><?php _e( 'Sorry, no posts matched your criteria.', 'woothemes' ) ?></p>
             </div><!-- /.post -->
         <?php endif; ?>
-	   
-		<?php if (function_exists('nrelate_related')) nrelate_related(); ?>	   
-        
+	           
 		</div><!-- /#main -->
 
         <?php get_sidebar(); ?>

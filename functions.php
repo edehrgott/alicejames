@@ -8,7 +8,7 @@ function ajb_scripts() {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('fancybox');
 	wp_enqueue_script('easing');
-	wp_enqueue_script('ajb-local');
+	wp_enqueue_script('ajb-local');	
 }
 
 add_action( 'wp_enqueue_scripts', 'ajb_scripts' );
@@ -212,9 +212,7 @@ function ajb_meta_box_save( $post_id ) {
 	if( isset( $_POST['h_isbn_meta_box'] ) )  
 	    update_post_meta( $post_id, 'h_isbn', wp_kses( $_POST['h_isbn_meta_box'], $allowed ) );
 	if( isset( $_POST['h_paypal_meta_box'] ) )  
-	    update_post_meta( $post_id, 'h_paypal_link', wp_kses( $_POST['h_paypal_meta_box'], $allowed ) );	    
-	    
-
+	    update_post_meta( $post_id, 'h_paypal_link', wp_kses( $_POST['h_paypal_meta_box'], $allowed ) );
 }
 
 // AJB options for community is...

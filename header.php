@@ -83,11 +83,14 @@ if ( function_exists( 'has_nav_menu' ) && has_nav_menu( 'primary-menu' ) ) {
         </ul><!-- /#nav -->
         <?php } ?>
         <div class="search_main fr">
-		<!--<form method="get" class="searchform" action="<?php echo home_url( '/' ); ?>" >
-		    <input type="text" class="field s" name="s" value="" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '') {this.value = '';}" />
-		    <input type="image" src="<?php echo get_template_directory_uri(); ?>/images/ico-search.png" class="search-submit" name="submit" value="<?php esc_attr_e( 'Go', 'woothemes' ); ?>" />
-		</form>-->
-		<?php display_search_box(DISPLAY_RESULTS_AS_POP_UP); ?>
+		<?php if ( function_exists( 'display_search_box' )) { //google search plugin
+			display_search_box(DISPLAY_RESULTS_AS_POP_UP); 			
+		} else { ?>
+			<form method="get" class="searchform" action="<?php echo home_url( '/' ); ?>" >
+			    <input type="text" class="field s" name="s" value="" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '') {this.value = '';}" />
+			    <input type="image" src="<?php echo get_template_directory_uri(); ?>/images/ico-search.png" class="search-submit" name="submit" value="<?php esc_attr_e( 'Go', 'woothemes' ); ?>" />
+			</form>
+		<?php } ?>
     <div class="fix"></div>
 </div>
 

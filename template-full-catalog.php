@@ -6,7 +6,15 @@ Template Name: Full Catalog
 	get_header();
 	global $woo_options, $portfolio_exclude;
 
-?>  
+?>
+	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+	<script type="text/javascript">
+	jQuery(function() {
+	    // initialize scrollable without mousewheel support
+	    jQuery("#full-catalog-scrollable").scrollable({ vertical: true, mousewheel: false });
+	});
+	</script>
+	
     <div id="content" class="col-full">
     
 	<?php if ( $woo_options[ 'woo_breadcrumbs_show' ] == 'true' ) { ?>
@@ -65,8 +73,14 @@ Template Name: Full Catalog
 		
 		if ( ! empty( $portfolio ) ) { $count = 0;
 	    ?>
-		<ol class="portfolio dribbbles">
-		<?php foreach( $portfolio as $post ) { setup_postdata( $post ); $count++; ?>
+	     <div id="actions">
+			<a class="prev"><img src="/ajbassets/back_button.gif" title="Previous" alt="Previous" /></a>
+			<a class="next"><img src="/ajbassets/next_button.gif" title="Next" alt="Next" /></a>			
+		</div>
+		<div id="full-catalog-scrollable">
+		<div class="items">
+		<?php foreach( $portfolio as $post ) { setup_postdata( $post ); $count++;
+			echo ((($count-1) % 4 == 0) ? '<div class="item"><ol class="portfolio dribbbles full-catalog">' : ''); ?>
 		    <li class="group">
 			<div class="dribbble">
 				<div class="dribbble-shot">
@@ -78,12 +92,14 @@ Template Name: Full Catalog
 				</div>
 			</div>
 		    </li>
-		<?php
-				}
-			} // End IF Statement
+		    	<?php echo (($count % 4 == 0) ? '</div></ol>' : ''); 
+			}
+		} // End IF Statement
+						
 		?>
 
-		</ol>
+		</div>
+		</div>
 		
 		<div class="fix"></div>
 		<!--<div class="portfolio-shadow"></div>-->

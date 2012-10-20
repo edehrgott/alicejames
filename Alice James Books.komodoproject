@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="37053ee6-5c5e-4b66-af46-56f30e5fb123" kpf_version="5" name="Alice James Books.komodoproject">
+<preference-set idref="37053ee6-5c5e-4b66-af46-56f30e5fb123">
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;_svn;.git;.hg;.bzr;*%25*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;.komodotools;__pycache__</string>
+  <string id="import_include_matches"></string>
+</preference-set>
 </project>

@@ -39,7 +39,7 @@ $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' 
 			   </div> <!-- post content -->
 			   
 			   <?php // show slider with author's other works
-			   $wp_query = new WP_Query("post_type=ajb-titles&post_status=publish&authors=" . $term->name . '&nopaging=true"'); ?>
+			   $wp_query = new WP_Query("post_type=ajb-titles&post_status=publish&authors=" . $term->slug . '&nopaging=true"'); ?>
 			   <div class="slider-container">
 				 <div class="slider-header">
 				    <h2 class="slider-title">Titles by <?php echo $term->name; ?></h2>

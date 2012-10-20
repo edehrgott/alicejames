@@ -46,6 +46,31 @@ Version:        0.1.0
 	width: 185px;
 }
 
+.nav li.current-menu-item {
+	border-bottom: none;
+	background: #9A005A;
+}
+
+#navigation .nav .current-menu-item a {
+	color: #ffffff;
+}
+
+#navigation .nav .sub-menu a {
+	color: #777 !important;
+}
+
+#navigation .nav .sub-menu a:hover {
+	color: #9A005A !important;
+}
+
+#navigation .nav .sf-with-ul a {
+	color: #777 !important;
+}
+
+.nav li.hover {
+	background: #9A005A;
+}
+
 form.gsc-search-box {
 	width: 245px !important;
 }
@@ -368,6 +393,16 @@ a.add-to-cart:hover {
 	padding:  0 15px 0 15px;
 }
 
+.nrelate {
+	padding: 0 0 15px 0 !important;
+}
+
+.nrelate_default .nr_text {
+	font-family: 'EB Garamond', arial, sans-serif !important;
+	font-weight: normal !important;
+	font-size: 14px !important;
+}
+
 #selected-poem h3,p {
 	margin-bottom: 1.2em;
 }
@@ -386,7 +421,7 @@ a.woo-sc-button.buttoncenter.silver {
 }
 
 .slider-container {
-	padding: 10px 4px;
+	padding: 0px 4px;
 	display: block;
 	clear: both;
 	overflow: hidden;
@@ -394,6 +429,7 @@ a.woo-sc-button.buttoncenter.silver {
 
 .slider-header {
 	display: block;
+	position: relative;
 	height: 30px;
 	border-bottom: 1px solid #9a005a;		
 }
@@ -401,62 +437,62 @@ a.woo-sc-button.buttoncenter.silver {
 .slider-nav {
 	cursor: pointer;
 	position: absolute;
-	top: -15px;
-	left: 624px;
+	top: 0x;
+	left: 600px;
 }
 .slider-nav-1 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-2 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-3 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-4 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: -0px;
+	left: 600px;	
 }
 .slider-nav-5 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-6 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-7 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-8 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider-nav-9 {
 	cursor: pointer;
 	position: absolute;
-	top: 15px;
-	left: 624px;	
+	top: 0px;
+	left: 600px;	
 }
 .slider {
 	padding: 10px 0 0 10px;
@@ -580,12 +616,69 @@ a.slider-item-title:hover {
 	color: #25a !important;
 }
 
+/*.full-catalog {
+	height: 800px !important;
+	overflow: auto;
+}*/
+
+#full-catalog-scrollable {
+    /* required settings */
+    position:relative;
+    overflow:hidden;
+    /* vertical scrollers have typically larger height than width */
+    height: 800px;
+    width: 930px;
+}
+
+/* root element for scrollable items */
+#full-catalog-scrollable .items {
+    position:absolute;
+    /* this time we have very large space for height */
+    height:20000em;
+    margin: 0px;
+}
+
+/* single scrollable item */
+#full-catalog-scrollable .item {
+    font-size:12px;
+    height: 400px;
+}
+
+/* the action buttons above the scrollable */
+#actions {
+    width:930px;
+    margin:30px 0 10px 0;
+}
+
+#actions a {
+    font-size:12px;
+    cursor:pointer;
+    color:#666;
+}
+
+#actions a:hover {
+    text-decoration:underline;
+    color:#000;
+}
+
+.disabled {
+    visibility:hidden;
+}
+
+.next {
+    float:right;
+}
+
 #sidebar .primary {
 	padding-top: 15px !important;
 }
 
 #sidebar .widget {
 	border-bottom: 1px solid #363636;
+}
+
+.post .title, .page .title {
+	font-family: EB Garamond, arial, sans-serif;
 }
 
 #footer a:hover {
